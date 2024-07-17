@@ -1,0 +1,27 @@
+<div class="selector">
+  <button class="selector__button" (click)="toggleDropdown()">
+    <p>Serif</p>
+    <span class="selector__arrow-down">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14"
+        height="8"
+        viewBox="0 0 14 8"
+      >
+        <path
+          fill="none"
+          stroke="#A445ED"
+          stroke-width="1.5"
+          d="m1 1 6 6 6-6"
+        />
+      </svg>
+    </span>
+  </button>
+
+  <!-- selector dropdown  -->
+  <div class="selector__dropdown" [class]="(dropdownActive ? 'active' : '')">
+    <li class="selector__dropdown-option">Serif</li>
+    <li class="selector__dropdown-option">San Serif</li>
+    <li class="selector__dropdown-option">Mono</li>
+  </div>
+</div>
