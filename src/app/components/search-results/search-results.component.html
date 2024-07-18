@@ -1,4 +1,4 @@
-@if(searchResults.length > 1) {
+@if(searchResults?.length > 1) {
   @for(searchResult of searchResults; track searchResult){
     <section class="search-results section">
       <!-- word and sound  -->
@@ -48,7 +48,7 @@
   }
 
 }
-@else {
+@else if( searchResults?.length === 1) {
   <section class="search-results section">
     <!-- word and sound  -->
     <div class="search-results__word">

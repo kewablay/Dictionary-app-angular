@@ -30,4 +30,10 @@
   @if(isEmpty){
   <p>Whoops, can't be empty…</p>
   }
+  @if(requestStatus === 'loading'){
+  <p>Loading…</p>
+  }
+  <!-- @if(requestStatus === 'error' && error?.status === 404){
+    <p>{{error.error.title}}</p>
+  } -->
 </div>
