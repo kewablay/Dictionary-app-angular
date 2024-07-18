@@ -1,0 +1,38 @@
+@import '../../../styles.sass'
+    
+.search-results 
+    .search-results__word
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        .search-results__word-title
+            font-weight: 700
+            font-size: map-get($font-sizes,xl )
+            margin: 0
+            margin-bottom: .5rem
+
+        .search-results__word-sound
+            font-size: map-get($font-sizes,md )
+            margin: 0
+            color: $clr-purple
+    
+    .search-results__sound-button
+        background: none
+        outline: none
+        border: none
+        cursor: pointer
+
+    .search-results__definitions
+        .definitions__section-title
+            display: flex
+            gap: 1rem
+            align-items: center
+
+            h4
+                font-weight: 700
+                font-size: map-get($font-sizes, lg)
+                font-style: italic
+                margin: 0
+    
+

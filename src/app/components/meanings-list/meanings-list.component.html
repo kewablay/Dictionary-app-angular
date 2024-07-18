@@ -1,0 +1,20 @@
+<div class="meanings-list">
+  @for (meaning of meanings; track meaning){
+  <div>
+    <h4 class="meanings-list__title">{{ meaning?.partOfSpeech }}</h4>
+    <div class="line"></div>
+  </div>
+
+  <p class="text-gray">Meaning</p>
+  <ul class="definition-list">
+    @for (definition of meaning?.definitions; track definition){
+      <li>{{ definition?.definition }}</li>
+    }
+  </ul>
+
+  <p class="text-gray synonyms-container">
+    Synonyms <span class="synonyms">{{ meaning?.synonyms }}</span>
+  </p>
+
+  }
+</div>
