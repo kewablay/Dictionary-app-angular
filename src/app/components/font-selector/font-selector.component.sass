@@ -1,0 +1,46 @@
+@import '../../../styles.sass'
+
+.selector
+    position: relative 
+    font-size: map-get($font-sizes,md )
+    font-weight: 700
+
+    .selector__button
+        border: none
+        outline: none
+        font-weight: 700
+        font-family: $font-family
+        font-size: map-get($font-sizes,md )
+        background: $clr-white
+        display: flex
+        flex-direction: row
+        align-items: center
+        gap: .8rem
+
+    .selector__dropdown
+        display: none
+        position: absolute
+        right: 0 
+        -top: 1rem
+        width: 8rem
+        padding: .5rem !important
+        margin: 0
+        padding: 0
+        border-radius: 10px
+        background-color: $clr-white
+        box-shadow: $shadow
+        z-index: 1
+    
+        .selector__dropdown-option
+            cursor: pointer
+            list-style: none
+            padding: 1rem
+            padding-block: .5rem
+            z-index: 10
+            transition: background-color 0.3s ease
+
+            &:hover 
+                color: $clr-purple
+
+    .selector__dropdown.active
+        display: block
