@@ -18,6 +18,7 @@ export class DictionaryService {
     return this.http.get<any>(`${this.apiUrl}${query}`).pipe(
       tap((results) => {
         this.searchResultsSubject.next(results);
+        this.errorSubject.next(null);
         this.requestStatusSubject.next('success');
       }),
       catchError((error) => {

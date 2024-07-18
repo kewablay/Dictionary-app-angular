@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
 import { MeaningsListComponent } from '../meanings-list/meanings-list.component';
 import { DictionaryService } from '../../services/dictionary.service';
-import { ResultComponent } from "../result/result.component";
 
 @Component({
   selector: 'app-search-results',
   standalone: true,
-  imports: [MeaningsListComponent, ResultComponent],
+  imports: [MeaningsListComponent],
   templateUrl: './search-results.component.html',
   styleUrl: './search-results.component.sass',
 })
 export class SearchResultsComponent {
   searchResults: any;
-  requstStatus: string = 'idle';
+  requestStatus: string = 'idle';
   error: any = null
 
   constructor(private dictionaryService: DictionaryService) {}
@@ -23,7 +22,7 @@ export class SearchResultsComponent {
       console.log('results: ', this.searchResults);
     });
     this.dictionaryService.getRequestStatus().subscribe((status) => {
-      this.requstStatus = status;
+      this.requestStatus = status;
     });
     this.dictionaryService.getError().subscribe((error) => {
       this.error = error
