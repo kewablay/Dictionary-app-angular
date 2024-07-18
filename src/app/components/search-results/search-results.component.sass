@@ -1,6 +1,7 @@
 @import '../../../styles.sass'
     
 .search-results 
+    width: 100%
     .search-results__word
         display: flex
         justify-content: space-between
@@ -11,6 +12,9 @@
             font-size: map-get($font-sizes,xl )
             margin: 0
             margin-bottom: .5rem
+
+            sup
+                font-size: map-get($font-sizes, sm)
 
         .search-results__word-sound
             font-size: map-get($font-sizes,md )
