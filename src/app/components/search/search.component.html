@@ -1,12 +1,14 @@
-<div class="search-container section">
+<form class="search-container section" (submit)="search()">
   <input
     class="search-input"
+    name="searchWord"
     type="text"
     placeholder="Search for any word..."
     [(ngModel)]="searchValue"
+    (ngModelChange)="onInputChange()"
   />
 
-  <button class="search-button">
+  <button class="search-button" type="submit">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="18"
@@ -23,4 +25,9 @@
       />
     </svg>
   </button>
+</form>
+<div class="error-message">
+  @if(isEmpty){
+  <p>Whoops, can't be empty…</p>
+  }
 </div>

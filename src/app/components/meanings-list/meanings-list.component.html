@@ -8,12 +8,12 @@
   <p class="text-gray">Meaning</p>
   <ul class="definition-list">
     @for (definition of meaning?.definitions; track definition){
-      <li>{{ definition?.definition }}</li>
+    <li>{{ definition?.definition }}</li>
     }
   </ul>
 
   <p class="text-gray synonyms-container">
-    Synonyms <span class="synonyms">{{ meaning?.synonyms }}</span>
+    Synonyms <span class="synonyms">{{ meaning?.synonyms.join(", ") }}</span>
   </p>
 
   }
