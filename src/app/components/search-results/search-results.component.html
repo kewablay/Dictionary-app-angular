@@ -9,6 +9,17 @@
     </div>
   </div>
 </section>
+} @if(requestStatus === 'error' && error?.status == 0 ) {
+<section class="search-error section">
+  <div class="search-error__container">
+    <div class="error-emoji">🛜</div>
+    <!-- error message display -->
+    <div class="error-message">
+      <h3>Network Error</h3>
+      <p>It seems you're offline,please check your internet and try again</p>
+    </div>
+  </div>
+</section>
 } @if(requestStatus === 'loading' ) {
 <section class="search-loading section">
   <div class="search-loading__container">

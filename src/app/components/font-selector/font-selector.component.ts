@@ -6,24 +6,23 @@ import { FontSelectionService } from '../../services/font-selection.service';
   standalone: true,
   imports: [],
   templateUrl: './font-selector.component.html',
-  styleUrl: './font-selector.component.sass'
+  styleUrl: './font-selector.component.sass',
 })
 export class FontSelectorComponent {
-  dropdownActive = false
-  currentFont = this.fontService.getCurrentFont()
+  dropdownActive = false;
+  currentFont = this.fontService.getCurrentFont();
 
-  fontsList: ['Serif', 'Sans Serif', 'Mono'] = ['Serif', 'Sans Serif', 'Mono']
+  fontsList: ['Sans Serif', 'Serif', 'Mono'] = ['Sans Serif', 'Serif', 'Mono'];
 
   constructor(private fontService: FontSelectionService) {}
 
   toggleDropdown() {
-    this.dropdownActive = !this.dropdownActive
-  }
-  
-  handleFontClick(font: 'Serif' | 'Sans Serif' | 'Mono') {
-    this.currentFont = font
-    this.fontService.setFont(font)
-    this.dropdownActive = false
+    this.dropdownActive = !this.dropdownActive;
   }
 
+  handleFontClick(font: 'Sans Serif' | 'Serif' | 'Mono') {
+    this.currentFont = font;
+    this.fontService.setFont(font);
+    this.dropdownActive = false;
+  }
 }

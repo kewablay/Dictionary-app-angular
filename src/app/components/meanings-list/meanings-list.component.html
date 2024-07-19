@@ -12,9 +12,13 @@
     }
   </ul>
 
+  @if(meaning?.synonyms.length) {
   <p class="text-gray synonyms-container">
     Synonyms <span class="synonyms">{{ meaning?.synonyms.join(", ") }}</span>
   </p>
-
-  }
+  } @if(meaning?.antonyms.length) {
+  <p class="text-gray synonyms-container">
+    Antonyms <span class="synonyms">{{ meaning?.antonyms.join(", ") }}</span>
+  </p>
+  } }
 </div>

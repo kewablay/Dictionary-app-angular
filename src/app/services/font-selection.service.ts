@@ -4,12 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class FontSelectionService {
-  private currentFont: 'Serif' | 'Sans Serif' | 'Mono' = 'Serif';
+  private currentFont: 'Serif' | 'Sans Serif' | 'Mono' = 'Sans Serif';
   constructor() {
     const savedFont = localStorage.getItem('font');
     this.currentFont = savedFont
       ? (savedFont as 'Serif' | 'Sans Serif' | 'Mono')
-      : 'Serif';
+      : 'Sans Serif';
     this.applyFont(this.currentFont);
   }
 
