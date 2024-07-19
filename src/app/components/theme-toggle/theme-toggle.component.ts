@@ -9,7 +9,7 @@ import { ThemeService } from '../../services/theme.service';
   styleUrl: './theme-toggle.component.sass',
 })
 export class ThemeToggleComponent {
-  toggleActive = false;
+  toggleActive:boolean = this.themeService.getCurrentTheme() === 'dark'
 
   constructor(private themeService: ThemeService) {}
 
