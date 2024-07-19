@@ -1,6 +1,6 @@
 <div class="selector">
   <button class="selector__button" (click)="toggleDropdown()">
-    <p>Serif</p>
+    <p>{{currentFont}}</p>
     <span class="selector__arrow-down">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -19,9 +19,9 @@
   </button>
 
   <!-- selector dropdown  -->
-  <div class="selector__dropdown" [class]="(dropdownActive ? 'active' : '')">
-    <li class="selector__dropdown-option">Serif</li>
-    <li class="selector__dropdown-option">San Serif</li>
-    <li class="selector__dropdown-option">Mono</li>
+  <div class="selector__dropdown" [class]="dropdownActive ? 'active' : ''">
+    @for(font of fontsList; track font) {
+    <li class="selector__dropdown-option" (click)="handleFontClick(font)" >{{ font }}</li>
+    }
   </div>
 </div>
