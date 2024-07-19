@@ -1,5 +1,70 @@
+@if(requestStatus === 'error' && error?.status === 404) {
+<section class="search-error section">
+  <div class="search-error__container">
+    <div class="error-emoji">😕</div>
+    <!-- error message display -->
+    <div class="error-message">
+      <h3>{{ error.error.title }}</h3>
+      <p>{{ error.error.message }} {{ error.error.resolution }}</p>
+    </div>
+  </div>
+</section>
+} @if(requestStatus === 'loading' ) {
+<section class="search-loading section">
+  <div class="search-loading__container">
+    <div id="loader">
+      <img src="assets/images/tube-spinner.svg" alt="" />
+      <p>Loading…</p>
+    </div>
+  </div>
+</section>
+} @if(requestStatus === 'success' && searchResults?.length > 1) {
+@for(searchResult of searchResults; track searchResult){
 <section class="search-results section">
-  @if(searchResults) {
+  <!-- word and sound  -->
+  <div class="search-results__word">
+    <div>
+      <h3 class="search-results__word-title">
+        {{ searchResults && searchResult?.word }}
+        <sup>{{ $index + 1 }}</sup>
+      </h3>
+      <p class="search-results__word-sound">
+        {{ searchResults && searchResult?.phonetic }}
+      </p>
+    </div>
+
+    <!-- sound button -->
+    <button class="search-results__sound-button" (click)="playAudio()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+        fill="none"
+      >
+        <circle opacity="0.25" cx="24" cy="24" r="24" fill="#A445ED" />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M19 18V31L32 24.5L19 18Z"
+          fill="#A445ED"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <!-- word defnitions -->
+  <div class="search-results__definitions section">
+    <app-meanings-list [meanings]="searchResults && searchResult?.meanings" />
+  </div>
+
+  <footer class="section">
+    <div class="line"></div>
+    <p>Source: {{ searchResults && searchResult?.sourceUrls[0] }}</p>
+  </footer>
+</section>
+} } @else if(requestStatus === 'success' && searchResults?.length === 1) {
+<section class="search-results section">
   <!-- word and sound  -->
   <div class="search-results__word">
     <div>
@@ -42,5 +107,5 @@
     <div class="line"></div>
     <p>Source: {{ searchResults && searchResults[0]?.sourceUrls[0] }}</p>
   </footer>
-  }
 </section>
+}

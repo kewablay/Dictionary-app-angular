@@ -1,6 +1,7 @@
 @import '../../../styles.sass'
     
 .search-results 
+    width: 100%
     .search-results__word
         display: flex
         justify-content: space-between
@@ -12,6 +13,9 @@
             margin: 0
             margin-bottom: .5rem
 
+            sup
+                font-size: map-get($font-sizes, sm)
+
         .search-results__word-sound
             font-size: map-get($font-sizes,md )
             margin: 0
@@ -22,6 +26,22 @@
         outline: none
         border: none
         cursor: pointer
+        transition: all .2s ease-in-out
+
+        svg
+            circle 
+                transition: all .2s ease-in-out
+            path
+                transition: all .2s ease-in-out
+                
+
+        &:hover 
+            svg
+                circle 
+                    opacity: 1
+                path
+                    fill: $clr-white
+          
 
     .search-results__definitions
         .definitions__section-title
@@ -36,3 +56,46 @@
                 margin: 0
     
 
+.search-error 
+    .search-error__container
+        padding-top: 4rem
+        display: flex
+        flex-direction: column
+        gap: 3rem
+    
+        .error-emoji    
+            display: flex
+            justify-content: center
+            align-items: center
+            font-size: 4rem
+
+        .error-message
+            h3
+                font-size: map-get($font-sizes,lg )
+                font-weight: 700
+                text-align: center
+                margin: 0
+                font-weight: 700
+
+            p
+                font-size: map-get($font-sizes,md )
+                text-align: center
+                margin: 0
+                margin-block: 1rem
+                max-width: 600px
+                margin-inline: auto
+                color: $text-secondary
+
+
+.search-loading
+    .search-loading__container
+        padding-top: 4.5rem
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 1rem
+
+    #loader
+        img
+            width: 70px
+            height: 70px      

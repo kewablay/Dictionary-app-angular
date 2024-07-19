@@ -12,8 +12,16 @@ import { DictionaryService } from '../../services/dictionary.service';
 export class SearchComponent {
   searchValue: string = '';
   isEmpty: boolean = false;
+  error: any = null;
 
   constructor(private dictionaryService: DictionaryService) {}
+
+  ngOnInit() {
+   
+    this.dictionaryService.getError().subscribe((error) => {
+      this.error = error;
+    });
+  }
 
   onInputChange() {
     this.isEmpty = false;

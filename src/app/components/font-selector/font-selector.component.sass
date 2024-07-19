@@ -11,11 +11,12 @@
         font-weight: 700
         font-family: $font-family
         font-size: map-get($font-sizes,md )
-        background: $clr-white
         display: flex
         flex-direction: row
         align-items: center
         gap: .8rem
+        background: $background-color
+        transition: all .2s ease-in-out
 
     .selector__dropdown
         display: none
@@ -30,6 +31,7 @@
         background-color: $clr-white
         box-shadow: $shadow
         z-index: 1
+        box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.10)
     
         .selector__dropdown-option
             cursor: pointer
@@ -41,6 +43,16 @@
 
             &:hover 
                 color: $clr-purple
+
+            &:nth-child(1)
+                font-family: $ff-Serif
+
+            &:nth-child(2)
+                font-family: $ff-SanSerif
+
+            &:nth-child(3)
+                font-family: $ff-Mono
+            
 
     .selector__dropdown.active
         display: block
