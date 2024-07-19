@@ -14,7 +14,6 @@
 
     
 // Colors 
-
 // shades of black
 $clr-black-900: #050505
 $clr-black-700: #1F1F1F
@@ -67,14 +66,37 @@ $font-family: $ff-SanSerif
 
     
 [data-theme="dark"]
-    $background-color: $clr-white
-    $background-accent: $clr-gray-500
-    $text-primary: $clr-black-900
+    $background-color: $clr-black-900
+    $background-accent: $clr-black-700
+    $text-primary: $clr-gray-700
     $text-secondary: $clr-gray-900
     $text-purple: $clr-purple
     $text-warning: $clr-red
 
+    body
+        background: $background-color
+        color: $text-primary
+        font-family: $font-family
+        background: $background-color
+    
+        .app-container
+            transition: all .2s ease-in-out
+            background: $background-color
+        
+        .search-input
+            background: $background-accent
+            color: $text-primary
 
+        .selector__button, .selector__dropdown
+            background: $background-color !important 
+            color: $text-primary !important
+
+        .selector__dropdown
+            box-shadow: 0px 5px 20px 0px #371651 !important
+
+
+        
+    
 
 // Global styles
 html 
@@ -83,9 +105,10 @@ html
     box-sizing: border-box
 
 body
-    background-color: $background-color
     color: $text-primary
     font-family: $font-family
+    background: $background-color
+    transition: all .2s ease-in-out
 
 
 

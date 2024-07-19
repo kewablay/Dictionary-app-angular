@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-theme-toggle',
@@ -10,7 +11,14 @@ import { Component } from '@angular/core';
 export class ThemeToggleComponent {
   toggleActive = false;
 
-  toggleTheme() {
+  constructor(private themeService: ThemeService) {}
+
+  toggleTheme(): void {
     this.toggleActive = !this.toggleActive;
+    this.themeService.toggleTheme();
+  }
+
+  getCurrentTheme(): 'light' | 'dark' {
+    return this.themeService.getCurrentTheme();
   }
 }
