@@ -187,4 +187,13 @@ body
     height: .8px
     background-color: $clr-gray-700
 
+@media screen and (min-width: 768px)
+    $font-sizes: ("xl": 48px,"lg": 24px,"md": 18px,"sm": 14px) 
+
+    body
+        padding-top: 2.5rem
+
+        .search-results__word-title
+            font-size: map-get($font-sizes,xl ) !important
+
 
